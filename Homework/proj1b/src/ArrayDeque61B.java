@@ -1,10 +1,6 @@
-import com.google.common.truth.Truth;
-import org.checkerframework.checker.units.qual.A;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 public class ArrayDeque61B<T> implements Deque61B<T> {
 
@@ -69,8 +65,9 @@ public class ArrayDeque61B<T> implements Deque61B<T> {
 
     @Override
     public T get(int index) {
-        if (index < 0 || index >= size)
+        if (index < 0 || index >= size) {
             return null;
+        }
         return items[getIndex(head + index)];
     }
 
@@ -154,7 +151,9 @@ public class ArrayDeque61B<T> implements Deque61B<T> {
 
     @Override
     public boolean equals(Object other) {
-        if (this == other) return true;
+        if (this == other) {
+            return true;
+        }
 
         if (other instanceof ArrayDeque61B otherDeque) {
             if (size != otherDeque.size()) {

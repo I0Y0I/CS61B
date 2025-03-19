@@ -12,14 +12,14 @@ public class MaxArrayDeque61B<T> extends ArrayDeque61B<T> {
         return max(c);
     }
 
-    public T max(Comparator<T> c) {
+    public T max(Comparator<T> cmp) {
         if (isEmpty()) {
             return null;
         }
 
         T maxItem = get(0);
         for (T t : this) {
-            if (c.compare(maxItem, t) < 0) {
+            if (cmp.compare(maxItem, t) < 0) {
                 maxItem = t;
             }
         }
